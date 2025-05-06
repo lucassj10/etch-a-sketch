@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+}
+
+.container{
+
+display: flex;
+flex-direction: row;
+height: 200px;
+flex-wrap: wrap;
+align-content: flex-start;
+height: 500px;
+width: 500px;
+}
+
+.container > div {
+    height: 25px;
+    width: 25px;
+    border: 2px solid black;
+    flex-basis: 6%;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
