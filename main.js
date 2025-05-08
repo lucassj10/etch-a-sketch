@@ -1,20 +1,22 @@
+
+
+const containerSize = 600
+let col = 18;
+let row = 18;
+let gridSize = row * col;
+
 const container  = document.querySelector(".container");
-
-
-//for (let i = 0; i < gridSize; i++) {
-  //  const div = document.createElement("div")
-    //div.setAttribute("class", "vertical")
-    //container.appendChild(div);
-//}
+const root = document.documentElement; //get de root pseudo-class
+root.style.setProperty(`--cellWidth`, `${(containerSize / col)}px`);
+root.style.setProperty(`--cellHeigth`, `${(containerSize / row)}px`);
 
 function createGrid(size){
-    let gridSize = size * size;
 
-    for ( let i = 0; i < gridSize; i++ ) {  
+    for ( let i = 0; i < size; i++ ) {  
         const div = document.createElement("div");
         container.appendChild(div);
     }
     
 }
 
-createGrid(8);
+createGrid(gridSize);
