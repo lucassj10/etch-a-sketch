@@ -15,8 +15,14 @@ function createGrid(size){
     for ( let i = 0; i < size; i++ ) {  
         const div = document.createElement("div");
         container.appendChild(div);
+        div.addEventListener( "mouseover", ()=>{
+            div.setAttribute("class", "cell");
+        })
+        
     }
     
 }
+
+
 
 createGrid(gridSize);
