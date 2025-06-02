@@ -11,11 +11,17 @@ root.style.setProperty(`--cellHeigth`, `${(containerSize / row)}px`);
 
 function createGrid(){
     let gridSize = row * col;
+    let opacity = 0.1;
     for ( let i = 0; i < gridSize; i++ ) {  
         const div = document.createElement("div");
         container.appendChild(div);
         div.addEventListener( "mouseover", ()=>{
-            div.setAttribute("class", "cell");
+            div.style.opacity = `${opacity}`
+            div.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}
+            , ${Math.floor(Math.random() * 256)})`;
+            if( opacity <= 0.9 ){
+                opacity = opacity + 0.1;
+            }
         })
         
     }
